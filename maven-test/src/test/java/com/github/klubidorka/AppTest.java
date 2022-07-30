@@ -1,44 +1,24 @@
 package com.github.klubidorka;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-import org.assertj.core.api.Assertions;
-
-import java.util.Arrays;
-import java.util.List;
-
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import org.junit.jupiter.api.Test;
 
 public class AppTest {
 
     @Test
-    void helloWorldTest() {
-        App.main(new String[]{});
-    }
-
-    @Test
     void helloTest() {
-        Assertions.assertThat(2 + 2).isEqualTo(4);
-    }
-
-    @Test
-    void strTest() {
-        String a = "Hello, world!";
-        String b = "Hello, world!";
-        Assertions.assertThat(a).isEqualTo(b);
-    }
-
-    @Test
-    void otherStrTest() {
-        String a = "Hello, world!";
-        Assertions.assertThat(a)
-                .startsWith("Hello")
-                .contains("llo, ")
-                .endsWith("!");
+        Assertions.assertThat(App.fibonacci(1)).isEqualTo(1);
+        Assertions.assertThat(App.fibonacci(2)).isEqualTo(1);
     }
 
     @BeforeAll
